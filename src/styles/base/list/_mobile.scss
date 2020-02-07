@@ -1,0 +1,113 @@
+.container {
+    padding: 3px;
+   
+    table { 
+        margin: 0 auto;
+        background: #bbb;
+        padding: 1px;
+        font-size: 16px;
+        border-spacing: 3px; 
+        table-layout: fixed;
+        width: 97%; 
+      
+        caption {
+            padding: 3px;
+            color: teal;
+            font-size: 16px;
+         
+            .captionbox {
+                caption-side: top;
+                @include flex();
+                -webkit-box-pack: justify; 
+                -ms-flex-pack: justify; 
+                 justify-content: space-between;
+            
+                .pages {
+                
+                    button {
+                        border: none; 
+                        font-size: 22px;
+                        background: #fff;
+
+                        &:hover {
+                            cursor: pointer;
+                            color: $mS; 
+                        }
+                    }
+          
+                    span {
+                        margin: 9px;
+                    } 
+                }
+
+                .select {
+          
+                    select { 
+                        @include select-btn();
+
+                        &:hover {
+                            @include btn-hover();
+                        }
+                    }
+
+                    button { 
+                        @include select-btn();
+                        @include btn();
+                        width: auto;
+          
+                        &:hover {
+                            @include btn-hover();
+                        } 
+                    }
+                } 
+            }     
+        }
+
+        thead {
+            display: none; 
+        }
+
+        tbody {
+
+            tr {
+
+                td {
+                    @include td-style();
+                    display: block;
+                    padding: 3px;
+                    text-align: right;
+                    
+                    &:hover{
+                        cursor: pointer;
+                        background: $lV;
+                        border: none;
+                        color: $mS;
+                    }
+
+                    &:nth-child(2):hover,
+                    &:nth-child(3):hover,
+                    &:nth-child(4):hover,
+                    &:nth-child(6):hover { 
+                        display: -ms-inline-grid; 
+                        display: inline-grid;
+                        @include td-hover();
+                        font-size: 12px; 
+                        padding: 2px;
+                    } 
+
+                    &:nth-child(even) {
+                        background-color: $hD;
+                    }
+
+                    &:before {
+                        content: attr(data-label); 
+                        float: left; 
+                        color: $mS;
+                        margin-right: 9px; 
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    } 
+}

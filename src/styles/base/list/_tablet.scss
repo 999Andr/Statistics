@@ -1,0 +1,29 @@
+.container {
+    padding: 9px;
+
+    table { 
+        padding: 6px;
+        font-size: 14px; 
+        border-collapse: separate; 
+
+        thead {
+        
+            tr {
+          
+                th {
+                    padding: 2px;
+                }
+            }
+        } 
+
+        tbody { 
+          
+            tr {
+          
+                td {
+                    padding: 2px;
+                }
+            }
+        }
+    }
+}  

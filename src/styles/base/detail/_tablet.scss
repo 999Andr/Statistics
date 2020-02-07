@@ -1,0 +1,39 @@
+.container { 
+	padding: 12px;
+	
+	h3 {
+		font-size: 18px;
+	} 
+	
+	.select {
+	
+		p {
+			font-size: 16px;
+		} 
+
+		select { 
+			font-size: 18px; 
+			width: auto;
+		}
+		
+		button {  
+			font-size: 18px; 
+			width: auto; 
+		}
+		 
+		.message { 
+			font-size: 14px;
+		}
+	}
+	
+	h5 {
+		font-size: 12px; 
+	}
+		
+    .boxchart {
+		
+		.chart { 
+			width: auto; 
+		}
+	}
+}

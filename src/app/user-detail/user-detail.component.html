@@ -1,0 +1,173 @@
+<div class="container">
+  
+  <h3> This page contains statistics for one month
+    from <span>2019-10-01</span> to <span>2019-10-31</span>.
+  </h3>
+
+  <div class="select">
+    
+    <p>You can select any period from <span>2019-10-01</span> 
+      to <span>2019-10-31</span>.
+    </p>
+    <p>Select two dates and click submit.</p>
+    
+    <select name="dates" #start>
+      <option hidden disabled> 
+        Select start-date 
+      </option>
+      <option *ngFor="let date of dates" [value]="date">
+        {{date}}
+      </option>
+            
+    </select>
+   
+    <select name="dates" #end>
+      <option hidden disabled> 
+        Select end-date 
+      </option>
+      <option *ngFor="let date of dates" [value]="date">
+        {{date}}
+      </option>
+    </select>
+
+    <button (click)='getUserDataSort(start.value,end.value)'>
+      Submit
+    </button>
+    
+    <div class="message">{{message}}</div> 
+
+  </div>
+
+  <h5 [hidden]='oneClick'>
+    By default, statistics for the last week of this month are displayed.
+  </h5>
+ 
+  <div class='boxchart' [hidden]='inVis'>
+    <div class='chart'>
+      <ngx-charts-line-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [legend]="legend" 
+      [legendPosition]="legendPosition"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [timeline]="timeline"
+      [results]="multi"
+      (select)="onSelect($event)"
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)"
+      >
+      </ngx-charts-line-chart>
+    </div>
+
+    <div class='box'>
+  
+      <div class='boxnames'>
+        <div class='first'>date 2019-10-</div>
+        <div class='second'>clicks</div>
+        <div class='third'>page_views</div>
+      </div>
+
+      <div class='boxdata'>  
+        <div  *ngFor="let day of userData" class='for'> 
+ 
+          <div class='data'>{{day.date.slice(8)}}</div> 
+          <div class='data'>{{day.clicks}}</div>
+          <div class='data'>{{day.page_views}}</div> 
+        </div >
+      </div> 
+    </div>  
+
+
+    <div *ngIf='user' class="table">
+
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.gender}}</td> 
+          </tr>
+        </tbody>
+      </table>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>first_name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{user.first_name}}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>last_name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{user.last_name}}</td> 
+          </tr>
+        </tbody>
+      </table>
+  
+
+      <table>
+        <thead>
+          <tr>
+            <th>email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr> 
+            <td>{{user.email}}</td>  
+          </tr>
+        </tbody>
+      </table>
+  
+      <table>  
+        <thead>
+          <tr>
+            <th>ip_address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{user.ip_address}}</td> 
+          </tr>
+        </tbody>
+      </table>
+  
+      <table> 
+        <thead>
+          <tr>
+            <th>total_clicks</th> 
+            <th>total_page_views</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>  
+            <td>{{user.total_clicks}}</td> 
+            <td>{{user.total_page_views}}</td> 
+          </tr>
+        </tbody>
+      </table> 
+  
+ </div>
+</div>
+

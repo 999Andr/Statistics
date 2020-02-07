@@ -1,0 +1,18 @@
+@import 'abstracts/variables';
+
+@import 'abstracts/mixins';
+
+@import 'base/detail/mobile';
+
+@media  screen and (min-width : 786px) {
+ 	@import 'base/detail/tablet';
+}
+
+@media  screen and (min-width : 1324px) { 
+ 	@import 'base/detail/desktop';
+}
+
+@media  screen and (min-width : 1431px) {   
+	@import 'base/detail/tv';
+}
+	

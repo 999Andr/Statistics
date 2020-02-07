@@ -1,0 +1,161 @@
+.container { 
+	padding: 3px;
+ 
+	h3 {
+		font-size: 14px; 
+		color:$one-color;
+	}
+
+	.select{
+				
+		p {
+			font-size: 12px; 
+		}
+		
+		select {  
+			@include select-btn();
+ 			font-size: 13px;
+			&:hover {
+			@include btn-hover(); 
+			}
+		}
+		
+		button { 
+			@include select-btn(); 
+            @include btn();
+			
+			&:hover {
+				@include btn-hover();
+			} 
+		}
+
+		.message { 
+			color: #ff4500; 
+			font-size: 12px;
+		}  
+	}
+	     
+    h5 {	
+    	font-size: 11px; 
+    	color: grey;
+    }
+
+    .boxchart { 
+
+    	.chart { 
+			border: $bord;
+		}
+    
+		.box {  
+			@include flex-inline(); 
+			@include flex-col();
+			border: $bord; 
+			width: 299px; 
+			margin: 3px 0;
+		    
+			.boxnames{
+				@include flex();
+				@include flex-row();
+				font-size:14px; 
+
+				div { 
+                	border: $bord; 
+	 				padding: 3px;
+	 				text-align: center;
+	 				background: $hD; 
+	 				width: 99px;  
+				
+	 				&.first {
+	 					color: grey;
+					}
+					 
+					&.second {
+	 					color: #5AA454;
+					}
+					
+					&.third {
+	 					color: #E44D25;
+					}
+				} 
+			} 
+
+			.boxdata { 
+				@include flex();  
+				color: teal; 
+	            -ms-flex-wrap:wrap; 
+			    flex-wrap:wrap; 
+				@include flex-row(); 
+				font-size: 14px;
+			
+				.for {
+					@include flex();
+					text-align: center;
+			
+					.data { 
+	 					border: $bord; 
+	 					padding: 3px; 
+     					width: 99px; 
+	 					background: $lV;
+	 				}	
+	 			}
+			}      
+		}
+    }
+		
+	.table { 
+		border: $bord;  
+		width: 300px;
+		
+		table { 
+			background: $lV;
+			padding: 3px;
+			font-size: 16px;
+			min-width: 298px; 
+			
+			thead {
+				
+                tr {
+                
+                	th { 
+                    	border: $bord;
+						@include thead-style();
+					}
+				} 
+			}
+
+			tbody {
+
+				tr { 
+
+					td {
+                 		border: $bord;
+						@include thead-style();
+						@include td-style();
+					}
+				}
+			}
+		
+	        &:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(4),
+			&:nth-child(5) {
+
+				tbody {
+
+					tr { 
+
+						td {
+
+							&:hover {
+								@include td-hover(); 
+								display: table-cell;
+								font-size: 11px; 
+								height: 45px;
+							}
+						}
+					}
+				}
+			}
+ 		}
+	}
+} 

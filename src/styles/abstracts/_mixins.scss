@@ -1,0 +1,75 @@
+@import 'abstracts/variables';
+
+@mixin select-btn() {
+    font-size: 14px; 
+	width: 98px;
+	padding: 3px ;
+	border: $bord;
+	text-align: center;	
+}
+    
+@mixin btn() {
+    color: $hD;
+    background: teal;
+}
+
+@mixin btn-hover() {
+	cursor: pointer;
+	background: $mS;
+	color: $hD;
+}
+
+@mixin thead-style() {
+	text-align: center;
+	padding: 3px;
+	max-width: 270px;	
+} 
+
+@mixin td-style() {
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+	color: teal;
+	background: #fff;
+}
+
+@mixin td-hover() {
+	cursor: pointer;
+	color: indigo;
+	background: #228b22;
+	border-radius: 3px; 
+	overflow: visible;
+	position: relative;
+	z-index: 9; 
+	top: 0px;
+	left: 0px;  
+	min-width: 100%;
+}
+
+@mixin flex() {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin flex-inline() {
+	display: -webkit-inline-box;  
+	display: -ms-inline-flexbox; 
+	display: inline-flex;
+}
+
+@mixin flex-col() {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column; 
+}
+
+@mixin flex-row() {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+} 
+
+ 

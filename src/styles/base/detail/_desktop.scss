@@ -1,0 +1,35 @@
+.container {
+
+	.boxchart {  
+	 	 
+	 	.box { 
+	 		@include flex-inline();  
+			@include flex-row();
+			width: auto;
+			   
+			.boxnames {
+				@include flex-col(); 
+				font-size: 16px;
+			
+				div { 
+		 			width: auto; 
+				}
+			}
+	 		 
+	 		.boxdata { 
+		        -ms-flex-wrap: nowrap; 
+				flex-wrap: nowrap;
+				@include flex-row(); 
+				font-size: 16px;
+			 
+				.for { 
+					@include flex-col(); 
+
+					.data { 
+						width: auto;
+					} 
+				} 
+			}
+		}
+	}
+}

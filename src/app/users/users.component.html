@@ -1,0 +1,60 @@
+<div class="container">
+
+  <table class="table-users">
+    <caption>
+      <div class="captionbox">
+        
+        <div class="pages">
+          <button (click)='getPreviousPage()'><</button> 
+          <span class="number">{{n+1}} of 20</span>
+          <button (click)='getNextPage()'>></button>
+        </div>
+       
+        <div class="select">
+          <select name="dates" #start>
+            <option hidden disabled> 
+                № of 20
+            </option>
+            <option *ngFor="let number of pages" 
+              [value]="number">
+                    {{number}}
+            </option>
+          </select>
+          <button (click)='getPageByNumber(start.value); 
+              start.value="№ of 20";'>
+              ok
+          </button>
+        </div>
+      </div>
+    </caption>
+  
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
+        <th>gender</th>
+        <th>ip_address</th>
+        <th>total_clicks</th> 
+        <th>total_page_views</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr class="text" *ngFor="let user of users" 
+        (click)="setUser(user)"
+        routerLink='/usersdet/{{user.id}}' >
+        
+        <td data-label="id:">{{user.id}}</td>
+        <td data-label="first_name:">{{user.first_name}}</td>
+        <td data-label="last_name:">{{user.last_name}}</td> 
+        <td data-label="email:">{{user.email}}</td> 
+        <td data-label="gender:">{{user.gender}}</td>
+        <td data-label="ip_address:">{{user.ip_address}}</td>  
+        <td data-label="total_clicks:">{{user.total_clicks}}</td>
+        <td data-label="total_page_views:">{{user.total_page_views}}</td> 
+      </tr> 
+    </tbody>
+  </table> 
+</div>
